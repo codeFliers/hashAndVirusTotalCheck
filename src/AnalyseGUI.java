@@ -189,7 +189,14 @@ public class AnalyseGUI extends JDialog {
                 //upload file
                 JSONObject postRes = uploadFilePOST();
                 JSONObject error = (JSONObject) postRes.get("error");
-                String errorRes = (String) error.get("code");
+
+                String errorRes = "";
+                try {
+                    errorRes = (String) error.get("code");
+                }catch(Exception e) {
+                    //
+                }
+
                 if (postRes != null && !errorRes.equals("WrongCredentialsError")) {
                     JSONObject data = (JSONObject) postRes.get("data");
                     //recover the special URL
@@ -399,7 +406,7 @@ public class AnalyseGUI extends JDialog {
              CloseableHttpResponse response = httpClient.execute(requestHTTPPost)) {
             String result = EntityUtils.toString(response.getEntity());
             jsonResultJSON = (JSONObject) parser.parse(result);
-
+            System.out.println("uploadfilepost: "+jsonResultJSON);
             return jsonResultJSON;
         } catch (ParseException | IOException e) {
             e.printStackTrace();
