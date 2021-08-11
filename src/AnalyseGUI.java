@@ -406,7 +406,6 @@ public class AnalyseGUI extends JDialog {
              CloseableHttpResponse response = httpClient.execute(requestHTTPPost)) {
             String result = EntityUtils.toString(response.getEntity());
             jsonResultJSON = (JSONObject) parser.parse(result);
-            System.out.println("uploadfilepost: "+jsonResultJSON);
             return jsonResultJSON;
         } catch (ParseException | IOException e) {
             e.printStackTrace();

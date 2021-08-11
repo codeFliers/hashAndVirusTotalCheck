@@ -194,7 +194,7 @@ public class MainProject extends JFrame implements ActionListener {
             @Override
             public void hyperlinkUpdate(HyperlinkEvent e) {
                 if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
-                    System.out.println("GET URL " + e.getURL());
+
                     if (e.getDescription().contains("apikey=")) {
                         try {
                             AnalyseGUI analyseGUI = new AnalyseGUI(e.getDescription());
