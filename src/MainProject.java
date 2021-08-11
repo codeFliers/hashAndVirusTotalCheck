@@ -136,7 +136,6 @@ public class MainProject extends JFrame implements ActionListener {
         Font newTextFieldFont = new Font(apiKeyTextField.getFont().getName(), Font.ITALIC + Font.BOLD, apiKeyTextField.getFont().getSize());
         apiKeyTextField.setFont(newTextFieldFont);
         apiKeyTextField.setText("Type your VT API Key...");
-        //apiKeyTextField.setText("e9672e7571398e32eb1687399e344a635b84b5eb43f4556f640e9f0d9ae65244");
         apiKeyTextField.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
